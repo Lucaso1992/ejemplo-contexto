@@ -5,17 +5,11 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
 
-  const [condition, setCondition] = useState(true)
-  const [information, setInformation] = useState({})
-  const [loggedIn, setLoggedIn] = useState(false)
+  const [ejemplo, setEjemplo] = useState("hola")
 
-  
-  const store = {condition, information}
-  const actions = {setCondition, getContacts};
+  const store = {ejemplo}
+  const actions = {setEjemplo};
 
-  useEffect(() => {
-    getFetchProfileInfo()
-  }, [loggedIn])
 
   return (
     <AppContext.Provider value={{ store, actions }}>
